@@ -1,0 +1,345 @@
+/* =========GENERAL========== */
+
+* { 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;           
+}
+
+body {
+    font-size: 1.6em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+/******************MOBILE FIRST************************/
+
+/*body viwport is set to 900%*/
+/*body content is centered*/
+body {
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+header, main, fieldset, footer, p{
+    text-align: center;
+}
+
+/* =========HEADER========== */
+.logo {
+    width: 5em;
+}
+
+/************* MAIN ********/
+h1 {
+    color: black;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+header > p {
+    font-size: 3em;
+}
+/*first image, the biggest one */
+.main img:nth-child(1) {
+    width: 100%;  
+}
+/* the rest of the images*/
+.main img{
+    width: 100%; 
+    /*shorthand propertie top & botom: 1em left & right:  0*/
+    /*margin: 1em 0 ;*/
+}
+
+#countdown {
+    padding: 2em;
+    border-radius: 5px;
+    letter-spacing: 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3em;
+    margin: 0 auto;
+}
+
+button {
+      width: 80%;
+      margin: 1em;
+      padding: 1em;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 300;
+      text-align: center;
+      background-color: black;
+        border-radius: 1em;
+        box-sizing: border-box;
+      text-decoration: none;
+       font-weight: 600;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+.fieldset {
+    /*background-color: yellow;*/
+    /*background-color: lightgrey;*/
+    display: flex;
+    flex-direction: column;  
+    border: none;
+    align-items: center;
+}
+
+    
+input[type=email] {
+    font-weight: bold;
+    height: 3em;
+    text-decoration: none;
+    margin: 1em;
+    padding-left: 1em;
+}
+
+label{ 
+    /*align-items: center;*/
+}
+
+h3{
+    margin: 2em;
+}
+    
+footer{ 
+   flex-direction: column;
+}
+
+footer a{
+    font-size: 1.6em;
+    padding: 1em;
+}
+
+
+/**************DESKTOP***************/
+
+/*https://css-tricks.com/snippets/css/complete-guide-grid/*/
+@media screen and (min-width: 960px) {
+ 
+     main{
+        position: relative;
+     }
+ 
+    .main img{
+        width: 100%; 
+    }
+    
+    #grid {
+        display: flex;
+        grid-template-columns: 50% 50%;
+        position: relative;
+        /*background-color: violet;*/
+        object-fit: cover; 
+        /*does not work??*/
+    }
+    
+    #subgrid {    
+        display: grid;
+        /*IDE error but works good*/
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-flow: dense;
+        text-align: center;
+        object-fit: none;
+    }    
+    .zero {
+        display: block;
+        width: auto;
+        max-width: 50%;
+        object-fit: cover;
+    }
+    
+    .one, 
+    .two, 
+    .three, 
+    .four, 
+    .five {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .double-col {
+             /*background-color: lightgrey;*/
+        padding: 3em;
+        grid-column: span 2; 
+        margin: 0 auto;
+        
+    }
+    
+    .simple-col {
+         padding: 3em;
+        grid-column: span 1;
+        /*background-color: lightgrey;*/
+    }
+  
+    .fieldset {
+        backdrop-filter: blur(30px);
+        width: 25%;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        /*https://coder-coder.com/background-image-opacity/*/
+        /*possibility to make the background as a pseudo element as well*/
+    }
+    
+    input[type=email] {
+        border-radius: 10px;
+        width: 50%;
+        height: 2em;
+        font-size: 1em;
+        text-decoration: none;
+    }
+
+    
+    input[type=checkbox] {
+   margin: 1em;
+    }
+    
+    .gdpr {
+    top: 50%;
+    left: 50%;  
+    
+    /*position: relative;*/
+    /*top: 50%;*/
+    /*transform: translateY(-50%);*/
+    
+/*    The element is being positioned according to the first non-static parent (position: relative, absolute, or fixed). Explore more in this fiddle and this documentation topic.*/
+/*For horizontal-only centering, use left: 50% and transform: translateX(-50%). The same goes for verticalonly centering: center with top: 50% and transform: translateY(-50%).*/
+/*Using a non-static width/height elements with this method of centering can cause the centered element to appear squished. This mostly happens with elements containing text, and can be fixed by adding: marginright: -50%; and margin-bottom: -50%;. View this fiddle for more information*/
+
+/* text-align controls only alignment of inline content like text in its parent block element    */
+    /*GOALKICKER.COM Section 5*/
+    }
+    
+    
+    /*https://codepen.io/zhaluza/pen/oNNeyLw?css-preprocessor=postcss*/
+    
+    
+     /*from css button app*/
+    /*button {*/
+    /*    background-color: black;*/
+    /*    cursor: pointer;*/
+    /*    display: inline-block;*/
+        /*border-radius: 1em;*/
+    /*    box-sizing: border-box;*/
+    /*  text-decoration: none;*/
+    /*  font-weight: 600;*/
+    /*  color: white;*/
+    /*  text-align: center;*/
+      /*transition: all 0.2s;*/
+    /*  animation: bn13bouncy 5s infinite linear;*/
+      /*position: relative;*/
+    /*}  */
+      
+    .ball { 
+          position: absolute;
+
+        /*background-color: black;*/
+        cursor: pointer;
+        /*display: inline-block;*/
+        /*border-radius: 1em;*/
+        box-sizing: border-box;
+      text-decoration: none;
+      font-weight: 600;
+      color: white;
+      text-align: center;
+      /*transition: all 0.2s;*/
+      /*animation: bn13bouncy 5s infinite linear;*/
+      height: 100px;
+      width: 100px;
+      border-radius: 100%;
+      
+      background: radial-gradient(ellipse at center, #cc0 0%, darken(#cc0, 15) 100%);;
+      box-sizing: border-box;
+      transform: translate(-50%, -50%) rotate(30deg);
+      box-shadow: 10px 20px 25px 10px rgba(#000, .2);
+      overflow: hidden;
+
+      /*z-index: 1;*/
+      /*animation: rotate 3s linear infinite;*/
+    }
+    
+    /*ball rotate*/
+    
+      .ball:before {
+        content: '';
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        border-radius: 100%;
+        border: .3em solid white;
+        left: -67%;
+        }
+    
+        .ball:after {
+        content: '';
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        border-radius: 100%;
+        border: .3em solid pink;
+        right: -67%;
+      }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}  
+ 
+    button:hover {
+      background-color: white;
+      /*border: 2px solid black;*/
+      color: black;
+    }
+    
+        /*IDE error but works good*/
+    /*@keyframes bn13bouncy {*/
+    /*  0% {*/
+    /*    left: 0em;*/
+    /*  }*/
+    /*  40% {*/
+    /*    left: 0em;*/
+    /*  }*/
+    /*  43% {*/
+    /*    left: -0.9em;*/
+    /*  }*/
+    /*  46% {*/
+    /*    left: 0em;*/
+    /*  }*/
+    /*  48% {*/
+    /*    left: -0.4em;*/
+    /*  }*/
+    /*  50% {*/
+    /*    left: 0em;*/
+    /*  }*/
+    /*  100% {*/
+    /*    left: 0em;*/
+    /*  }*/
+    /*en keyframes*/
+    /*}*/
+    
+    footer{ 
+        padding: 3em;
+        background-color: lightgrey;
+    }
+    footer a{
+         color: black;
+         padding: 1em;
+         text-decoration: none;
+    }
+    
+        /*IDE error but works good*/
+} /* end @media screen*/ 
